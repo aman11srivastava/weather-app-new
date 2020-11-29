@@ -2,6 +2,7 @@ const path = require('path') // Not a NPM package
 
 const express = require('express')
 const hbs = require('hbs')
+const chalk = require('chalk')
 
 const forecast = require('./utils/forecast')
 const geocode = require('./utils/geocode')
@@ -79,8 +80,7 @@ app.get('/weather', (req, res) => {
             error: 'No address provided!'
         })
     }
-
-    geoCode(req.query.address, (error, { longitude, latitude, location }) => {
+    geoCode(req.query.address, (error, { longitude, latitude, location } = {}) => {
         if(error){
             return res.send({error})
         }

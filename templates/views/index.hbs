@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>Weather</title>
     <link rel="icon" href="/img/weather.png">
     <link rel="stylesheet" href="/css/styles.css">
 </head>
+
 <body>
     <div class="main-content">
         {{>header}}
@@ -14,10 +16,18 @@
         {{!-- <p>Created by {{name}}</p> --}}
         {{!-- <h1>Home page from handlebars</h1> --}}
         <p>Use this site to check weather conditions in your area!</p>
+
+        <form>
+            <input placeholder="Location" type="text">
+            <button>Search</button>
+        </form>
+
+    <p id="message-one"></p>
+    <p id="message-two"></p>
     </div>
 
     {{>footer}}
 
+    <script src="/js/script.js"></script>
 </body>
-<script src="../public/js/script.js"></script>
 </html>

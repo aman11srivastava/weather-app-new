@@ -7,10 +7,10 @@ const forecast = (longitude, latitude, callback) => {
 
     request({url: weatherForecastURL, json: true}, (error, { body }) => {
         if(error){
-            callback(chalk.red('Cannot connect to Weather Services! Please check after sometime.'))
+            callback('Cannot connect to Weather Services! Please check after sometime.')
         }
         else if(body.error){
-            callback(chalk.red('Unable to find location!'))
+            callback('Unable to find location!')
         }
         else{
             callback(undefined, {
